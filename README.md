@@ -34,9 +34,7 @@ Bash
 sudo systemctl start prometheus
 sudo systemctl enable prometheus
 ======================================================================
-👉 UBICACIÓN DE LA CAPTURA 2: PROMETHEUS
-Colocar aquí la imagen que muestra la salida del comando "sudo systemctl status prometheus".
-Debe verificarse que el estado del servicio aparece en color verde indicando "active (running)".
+![prometheus](Capturas/prometheus.png)
 ======================================================================
 4. Despliegue del Servidor de Visualización (Grafana)
 Una vez asegurado el motor de persistencia de métricas, se instaló el servidor web de Grafana. Esta herramienta es la encargada de procesar las consultas complejas sobre la base de datos y renderizar las colecciones de datos en interfaces de usuario interactivas para el operador.
@@ -46,9 +44,7 @@ Se confirmó su correcta inicialización y su estado operacional a través del s
 Bash
 sudo systemctl status grafana-server
 ======================================================================
-👉 UBICACIÓN DE LA CAPTURA 3: GRAFANA
-Colocar aquí la imagen que muestra la salida del comando "sudo systemctl status grafana-server".
-Al igual que el anterior, debe reflejar el estado operacional "active (running)" en verde.
+![grafana](Capturas/grafana.png)
 ======================================================================
 5. Extracción de Métricas e Integración de Cuadros de Mando
 Para la telemetría del hardware del servidor, se implementó el agente oficial "Prometheus Node Exporter". Este subservicio captura con periodicidad de segundos el consumo de memoria RAM, uso de núcleos de CPU, operaciones de lectura/escritura de disco y estadísticas de rendimiento de las interfaces de red.
@@ -56,9 +52,7 @@ Para la telemetría del hardware del servidor, se implementó el agente oficial 
 Desde la consola web de Grafana (accesible en la dirección IP del entorno virtual 192.168.110.130:3000), se vinculó la base de datos local Prometheus como origen predeterminado. Posteriormente, se importó la plantilla estructural oficial de la comunidad número 1860 (Node Exporter Full). Esto generó de forma automatizada un panel analítico integral donde los datos aislados recolectados por el agente se transformaron en variables visuales y gráficas de líneas temporales.
 
 ======================================================================
-👉 UBICACIÓN DE LA CAPTURA 4: GRAFANA FUNCIONANDO
-Colocar aquí la imagen estrella del proyecto: la captura de pantalla completa del navegador de tu ordenador Windows físico.
-Debe ser visible la barra de direcciones con la URL "192.168.110.130:3000" y el panel lleno de gráficas de rendimiento fluctuando con el uso real del sistema.
+![grafana](Capturas/grafana-funcionando.png)
 ======================================================================
 6. Conclusiones
 La infraestructura implantada dota al entorno de una visibilidad completa sobre el estado operativo del servidor, permitiendo una administración proactiva ante posibles saturaciones de hardware. La separación estricta en capas (Agente de extracción -> Motor de datos -> Servidor de visualización) proporciona un entorno altamente escalable, preparado para añadir nodos adicionales a la red de monitorización en futuras fases de expansión tecnológica.
